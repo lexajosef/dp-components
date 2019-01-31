@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Accessible dropdown button</title>
+
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="./dropdown-btn.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+</head>
+<body>
+
+  <div class="dropdown-btn-container">
+    <button class="btn dropdown-toggle" id="menuBtn"
+        aria-label="Dropdown menu of items"   
+        aria-controls="menu"
+        aria-haspopup="true" 
+        aria-expanded="false">
+      A11Y dropdown
+    </button>
+    <ul class="dropdown-menu" id="menu"
+        role="menu" 
+        aria-labelledby="menuBtn">
+      <li role="none">
+        <a class="dropdown-item" href="#" role="menuitem">Item 1 with long text</a>
+      </li>
+      <li role="none">
+        <a class="dropdown-item" href="#" role="menuitem">Item 2</a>
+      </li>
+      <li role="none">
+        <a class="dropdown-item" href="#" role="menuitem">Item 3 is long</a>
+      </li>
+      <li role="none">
+        <a class="dropdown-item" href="#" role="menuitem">Item 4</a>
+      </li>
+    </ul>
+  </div>
+
+  <p>Lorem ipsum.</p>
+
+  <script src="./dropdown-btn.js"></script>
+
+</body>
+</html>
