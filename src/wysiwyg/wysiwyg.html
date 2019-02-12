@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML5 wysiwyg editor</title>
+
+  <link rel="stylesheet" href="./wysiwyg.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+
+  <div class="wysiwyg">
+    <div class="editor-btns">
+
+      <div class="btns-section">
+        <button onclick="execCmd('bold')" class="icon-button">
+          <i class="material-icons">format_bold</i>
+        </button>
+        <button onclick="execCmd('italic')" class="icon-button">
+          <i class="material-icons">format_italic</i>
+        </button>
+        <button onclick="execCmd('underline')" class="icon-button">
+          <i class="material-icons">format_underlined</i>
+        </button>
+      </div>
+
+      <div class="btns-section">
+        <select onchange="execCmdWithArg('fontName', this.value)" class="text-field in-wysiwyg">
+          <option value="Arial">Arial</option>
+          <option value="Comic Sans MS">Comic Sans MS</option>
+          <option value="Courier">Courier</option>
+          <option value="Georgia">Georgia</option>
+          <option value="Tahoma">Tahoma</option>
+          <option value="Times New Roman">Times New Roman</option>
+        </select>
+        <select onchange="execCmdWithArg('fontSize', this.value)" class="text-field in-wysiwyg" style="width:64px;">
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="14">14</option>
+          <option value="18">18</option>
+          <option value="24">24</option>
+          <option value="30">30</option>
+          <option value="36">36</option>
+          <option value="48">48</option>
+          <option value="60">60</option>
+          <option value="72">72</option>
+          <option value="96">96</option>
+        </select>
+      </div>
+
+      <div class="btns-section">
+        <button onclick="execCmd('justifyLeft')" class="icon-button">
+            <i class="material-icons">format_align_left</i>
+        </button>
+        <button onclick="execCmd('justifyRight')" class="icon-button">
+          <i class="material-icons">format_align_right</i>
+        </button>
+        <button onclick="execCmd('justifyCenter')" class="icon-button">
+          <i class="material-icons">format_align_center</i>
+        </button>
+        <button onclick="execCmd('justifyFull')" class="icon-button">
+          <i class="material-icons">format_align_justify</i>
+        </button>
+      </div>
+
+      <div class="btns-section">
+        <button onclick="execCmd('insertUnorderedList')" class="icon-button">
+          <i class="material-icons">format_list_bulleted</i>
+        </button>
+        <button onclick="execCmd('insertOrderedList')" class="icon-button">
+          <i class="material-icons">format_list_numbered</i>
+        </button>
+      </div>
+
+      <div class="btns-section">
+        <button onclick="execCmdWithArg('createLink', prompt('Enter a link URL', 'https://'))" class="icon-button">
+          <i class="material-icons">insert_link</i>
+        </button>
+      </div>
+
+      <div class="btns-section">
+        <button onclick="execCmd('undo')" class="icon-button">
+          <i class="material-icons">undo</i>
+        </button>
+        <button onclick="execCmd('redo')" class="icon-button">
+          <i class="material-icons">redo</i>
+        </button>
+      </div>
+
+    </div>
+
+    <iframe name="richTextEditor"></iframe>
+
+  </div>
+
+  <script src="./wysiwyg.js"></script>
+</body>
+</html>
