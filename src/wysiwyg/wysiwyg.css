@@ -7,10 +7,11 @@
 iframe {
   width: 800px;
   height: 500px;
-  
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   border: 1px solid rgba(0, 0, 0, .08);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
   box-sizing: border-box;
   padding: 8px;
 }
