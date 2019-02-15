@@ -13,85 +13,78 @@
 </head>
 <body>
 
-  <div class="wysiwyg">
-    <div class="editor-btns">
-
-      <div class="btns-section">
-        <button onclick="execCmd('bold')" class="icon-button">
-          <i class="material-icons">format_bold</i>
-        </button>
-        <button onclick="execCmd('italic')" class="icon-button">
-          <i class="material-icons">format_italic</i>
-        </button>
-        <button onclick="execCmd('underline')" class="icon-button">
-          <i class="material-icons">format_underlined</i>
-        </button>
+  <div class="flex-container">
+    <div class="wysiwyg">
+      <div class="editor-btns">
+        <div class="btns-section">
+          <button onclick="doCommand('bold')" class="icon-button">
+            <i class="material-icons">format_bold</i>
+          </button>
+          <button onclick="doCommand('italic')" class="icon-button">
+            <i class="material-icons">format_italic</i>
+          </button>
+          <button onclick="doCommand('underline')" class="icon-button">
+            <i class="material-icons">format_underlined</i>
+          </button>
+        </div>
+        <div class="btns-section">
+          <select onchange="doCommand('fontName', this.value)" class="text-field in-wysiwyg">
+            <option value="Arial">Arial</option>
+            <option value="Comic Sans MS">Comic Sans MS</option>
+            <option value="Courier">Courier</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Roboto" selected>Roboto</option>
+            <option value="Tahoma">Tahoma</option>
+            <option value="Times New Roman">Times New Roman</option>
+          </select>
+          <select onchange="doCommand('fontSize', this.value)" class="text-field in-wysiwyg" style="width:64px;">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+          </select>
+        </div>
+        <div class="btns-section">
+          <button onclick="doCommand('justifyLeft')" class="icon-button">
+              <i class="material-icons">format_align_left</i>
+          </button>
+          <button onclick="doCommand('justifyRight')" class="icon-button">
+            <i class="material-icons">format_align_right</i>
+          </button>
+          <button onclick="doCommand('justifyCenter')" class="icon-button">
+            <i class="material-icons">format_align_center</i>
+          </button>
+          <button onclick="doCommand('justifyFull')" class="icon-button">
+            <i class="material-icons">format_align_justify</i>
+          </button>
+        </div>
+        <div class="btns-section">
+          <button onclick="doCommand('insertUnorderedList')" class="icon-button">
+            <i class="material-icons">format_list_bulleted</i>
+          </button>
+          <button onclick="doCommand('insertOrderedList')" class="icon-button">
+            <i class="material-icons">format_list_numbered</i>
+          </button>
+        </div>
+        <div class="btns-section">
+          <button onclick="doCommand('createLink', prompt('Enter a link URL', 'https://'))" class="icon-button">
+            <i class="material-icons">insert_link</i>
+          </button>
+        </div>
+        <div class="btns-section">
+          <button onclick="doCommand('undo')" class="icon-button">
+            <i class="material-icons">undo</i>
+          </button>
+          <button onclick="doCommand('redo')" class="icon-button">
+            <i class="material-icons">redo</i>
+          </button>
+        </div>
       </div>
-
-      <div class="btns-section">
-        <select onchange="execCmdWithArg('fontName', this.value)" class="text-field in-wysiwyg">
-          <option value="Arial">Arial</option>
-          <option value="Comic Sans MS">Comic Sans MS</option>
-          <option value="Courier">Courier</option>
-          <option value="Georgia">Georgia</option>
-          <option value="Roboto" selected>Roboto</option>
-          <option value="Tahoma">Tahoma</option>
-          <option value="Times New Roman">Times New Roman</option>
-        </select>
-        <select onchange="execCmdWithArg('fontSize', this.value)" class="text-field in-wysiwyg" style="width:64px;">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-        </select>
-      </div>
-
-      <div class="btns-section">
-        <button onclick="execCmd('justifyLeft')" class="icon-button">
-            <i class="material-icons">format_align_left</i>
-        </button>
-        <button onclick="execCmd('justifyRight')" class="icon-button">
-          <i class="material-icons">format_align_right</i>
-        </button>
-        <button onclick="execCmd('justifyCenter')" class="icon-button">
-          <i class="material-icons">format_align_center</i>
-        </button>
-        <button onclick="execCmd('justifyFull')" class="icon-button">
-          <i class="material-icons">format_align_justify</i>
-        </button>
-      </div>
-
-      <div class="btns-section">
-        <button onclick="execCmd('insertUnorderedList')" class="icon-button">
-          <i class="material-icons">format_list_bulleted</i>
-        </button>
-        <button onclick="execCmd('insertOrderedList')" class="icon-button">
-          <i class="material-icons">format_list_numbered</i>
-        </button>
-      </div>
-
-      <div class="btns-section">
-        <button onclick="execCmdWithArg('createLink', prompt('Enter a link URL', 'https://'))" class="icon-button">
-          <i class="material-icons">insert_link</i>
-        </button>
-      </div>
-
-      <div class="btns-section">
-        <button onclick="execCmd('undo')" class="icon-button">
-          <i class="material-icons">undo</i>
-        </button>
-        <button onclick="execCmd('redo')" class="icon-button">
-          <i class="material-icons">redo</i>
-        </button>
-      </div>
-
+      <iframe name="richTextEditor"></iframe>
     </div>
-
-    <iframe name="richTextEditor"></iframe>
-
   </div>
 
   <script src="./wysiwyg.js"></script>
